@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duncan Park</title>
+<meta name="description" content="Duncan Park studies math and computer science at Cornell. He builds machine learning models for drug safety and sports analytics.">
+<meta property="og:title" content="Duncan Park">
+<meta property="og:description" content="Math and computer science at Cornell. Machine learning for drug safety and sports analytics.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23b31b1b'/><text x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='Georgia,serif'>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f3f5f7;
+  --ink: #111820;
+  --muted: #56616c;
+  --rule: #d3d9df;
+  --accent: #b31b1b;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12171d; --ink: #e8ecf0; --muted: #98a3ae; --rule: #2a323a; --accent: #ef6a6a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12171d; --ink: #e8ecf0; --muted: #98a3ae; --rule: #2a323a; --accent: #ef6a6a;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: 60rem; margin: 0 auto; padding: 4rem 1.5rem 5rem; }
+header { padding-bottom: 3.5rem; }
+h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(3.4rem, 11vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+.lede {
+  max-width: 34rem;
+  margin: 1.75rem 0 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--muted);
+}
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 1.75rem 0 0; padding: 0; list-style: none; font-family: var(--sans); font-size: 0.95rem; font-weight: 500; }
+section {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0.5rem 2rem;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--rule);
+}
+h2 { margin: 0; font-family: var(--sans); font-size: 0.95rem; font-weight: 600; line-height: 1.7; }
+.body { max-width: 38rem; }
+.item + .item { margin-top: 1.75rem; }
+h3 { margin: 0 0 0.15rem; font-size: 1.2rem; font-weight: 600; line-height: 1.35; }
+.meta { margin: 0 0 0.5rem; font-family: var(--sans); font-size: 0.875rem; color: var(--muted); }
+p { margin: 0; }
+p + p { margin-top: 0.75rem; }
+footer { padding-top: 2rem; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+@media (max-width: 40rem) {
+  .wrap { padding-top: 2.5rem; }
+  section { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Duncan Park</h1>
+  <p class="lede">I study math and computer science at Cornell, and I build machine learning models for drug safety and for football.</p>
+  <ul class="links">
+    <!-- EDIT: replace each # or placeholder with your real link -->
+    <li><a href="mailto:your.email@cornell.edu">Email</a></li>
+    <li><a href="https://github.com/YOUR-GITHUB-USERNAME">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">LinkedIn</a></li>
+    <li><a href="resume.pdf">Resume</a></li>
+  </ul>
+</header>
+
+<main>
+  <section>
+    <h2>Research</h2>
+    <div class="body">
+      <div class="item">
+        <h3>Predicting adverse drug reactions from FAERS</h3>
+        <p class="meta">Ma'ayan Lab</p>
+        <p>I'm building a multimodal deep learning pipeline that predicts adverse drug reactions from the FDA Adverse Event Reporting System. It joins chemical fingerprints for about 14.8 million reports with drug-induced gene expression signatures from LINCS L1000, then fuses the two into a shared representation that predicts clinical outcomes.</p>
+        <p>Most of the work is in the details: sparse matrices too large for memory, extreme class imbalance, and debugging models that quietly stop learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sports analytics</h2>
+    <div class="body">
+      <div class="item">
+        <h3>NFL field-goal outcome model</h3>
+        <p class="meta">Cornell Sports Analytics Club</p>
+        <p>Built a model that predicts whether a field goal will be made, and presented it to about 30 club members and leaders.</p>
+      </div>
+      <div class="item">
+        <h3>Football scouting and tempo models</h3>
+        <p class="meta">Big Red Sports Network, Research and Development sub-team</p>
+        <p>Write weekly scouting reports on Cornell football opponents and work with the team on models of tempo and punting performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Community</h2>
+    <div class="body">
+      <div class="item">
+        <h3>AIM Project</h3>
+        <p class="meta">President, 2022 to 2025</p>
+        <p>Led 20 tutors and 6 directors in free tutoring for underrepresented students across more than 20 NYC middle schools. Over 30 of our students earned admission to specialized high schools.</p>
+      </div>
+      <div class="item">
+        <h3>NYC Teens for 9 Million Reasons</h3>
+        <p class="meta">Co-president, 2022 to 2025</p>
+        <p>Co-founded a citywide group of 40+ teens that distributed food and clothes every week at the largest food pantry in New York City.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Right now</h2>
+    <div class="body">
+      <p>Learning OCaml, and thinking about mahjong discards in terms of probability.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; <span id="y">2026</span> Duncan Park
+</footer>
+
+</div>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
