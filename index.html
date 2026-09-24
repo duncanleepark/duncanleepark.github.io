@@ -21,16 +21,33 @@
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #12171d; --ink: #e8ecf0; --muted: #98a3ae; --rule: #2a323a; --accent: #ef6a6a;
+    --bg: #12171d;
+    --ink: #e8ecf0;
+    --muted: #98a3ae;
+    --rule: #2a323a;
+    --accent: #ef6a6a;
   }
 }
+
 :root[data-theme="dark"] {
-  --bg: #12171d; --ink: #e8ecf0; --muted: #98a3ae; --rule: #2a323a; --accent: #ef6a6a;
+  --bg: #12171d;
+  --ink: #e8ecf0;
+  --muted: #98a3ae;
+  --rule: #2a323a;
+  --accent: #ef6a6a;
 }
-* { box-sizing: border-box; }
-html { scroll-padding-top: 1rem; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 1rem;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -40,11 +57,44 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
-a:hover { color: var(--accent); }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-.wrap { max-width: 60rem; margin: 0 auto; padding: 4rem 1.5rem 5rem; }
-header { padding-bottom: 3.5rem; }
+
+a {
+  color: inherit;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1.5px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+/* HEADER */
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 3rem;
+  align-items: start;
+  padding-bottom: 3.5rem;
+}
+
+.header-text {
+  min-width: 0;
+}
+
 h1 {
   margin: 0;
   font-weight: 500;
@@ -52,6 +102,7 @@ h1 {
   line-height: 0.95;
   letter-spacing: -0.03em;
 }
+
 .lede {
   max-width: 34rem;
   margin: 1.75rem 0 0;
@@ -59,7 +110,39 @@ h1 {
   line-height: 1.4;
   color: var(--muted);
 }
-.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 1.75rem 0 0; padding: 0; list-style: none; font-family: var(--sans); font-size: 0.95rem; font-weight: 500; }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* FOUR PHOTO CLUSTER */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 68px);
+  gap: 7px;
+  width: max-content;
+  justify-self: end;
+}
+
+.photo-grid img {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 7px;
+  display: block;
+}
+
+/* SECTIONS */
+
 section {
   display: grid;
   grid-template-columns: 11rem 1fr;
@@ -67,17 +150,73 @@ section {
   padding: 2.25rem 0;
   border-top: 1px solid var(--rule);
 }
-h2 { margin: 0; font-family: var(--sans); font-size: 0.95rem; font-weight: 600; line-height: 1.7; }
-.body { max-width: 38rem; }
-.item + .item { margin-top: 1.75rem; }
-h3 { margin: 0 0 0.15rem; font-size: 1.2rem; font-weight: 600; line-height: 1.35; }
-.meta { margin: 0 0 0.5rem; font-family: var(--sans); font-size: 0.875rem; color: var(--muted); }
-p { margin: 0; }
-p + p { margin-top: 0.75rem; }
-footer { padding-top: 2rem; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+
+h2 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.body {
+  max-width: 38rem;
+}
+
+.item + .item {
+  margin-top: 1.75rem;
+}
+
+h3 {
+  margin: 0 0 0.15rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.meta {
+  margin: 0 0 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 0.75rem;
+}
+
+footer {
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* MOBILE */
+
 @media (max-width: 40rem) {
-  .wrap { padding-top: 2.5rem; }
-  section { grid-template-columns: 1fr; gap: 0.75rem; }
+  .wrap {
+    padding-top: 2.5rem;
+  }
+
+  header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .photo-grid {
+    justify-self: start;
+  }
+
+  section {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 }
 </style>
 </head>
@@ -85,15 +224,28 @@ footer { padding-top: 2rem; border-top: 1px solid var(--rule); font-family: var(
 <div class="wrap">
 
 <header>
-  <img src="headshot" alt="Duncan Park" class="portrait">
-  <h1>Duncan Park</h1>
-  <p class="lede">Hi, I'm Duncan! I'm an undergraduate at Cornell University interested in data science, sports analytics, bioinformatics, and more.</p>
-  <ul class="links">
-    <li><a href="mailto:duncanleepark@gmail.com">Email</a></li>
-    <li><a href="https://github.com/duncanleepark">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/duncan-park-785548282/">LinkedIn</a></li>
-    <li><a href="resume.pdf">Resume</a></li>
-  </ul>
+  <div class="header-text">
+    <h1>Duncan Park</h1>
+
+    <p class="lede">
+      Hi, I'm Duncan! I'm an undergraduate at Cornell University interested
+      in data science, sports analytics, bioinformatics, and more.
+    </p>
+
+    <ul class="links">
+      <li><a href="mailto:duncanleepark@gmail.com">Email</a></li>
+      <li><a href="https://github.com/duncanleepark">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/duncan-park-785548282/">LinkedIn</a></li>
+      <li><a href="resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+
+  <div class="photo-grid">
+    <img src="headshot" alt="Duncan Park">
+    <img src="duncangeoffrey" alt="Duncan Park">
+    <img src="photo3.jpg" alt="Duncan Park">
+    <img src="photo4.jpg" alt="Duncan Park">
+  </div>
 </header>
 
 <main>
