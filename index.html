@@ -16,6 +16,7 @@
   --bg: #ffffff;
   --ink: #202124;
   --heading: #4a7ab8;
+  --heading-tint: #eef3fa;
   --muted: #5f6368;
   --rule: #e2e5e8;
   --sans: "Public Sans", "Google Sans Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -116,26 +117,44 @@ footer {
   .photo-grid { max-width: 26rem; }
   section { grid-template-columns: 1fr; gap: 0.75rem; }
 }
-/* Presentation & Project Links Style */
-.project-links {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.project-links a {
-  color: var(--heading);
-  text-decoration: none;
-}
-.project-links a:hover {
-  text-decoration: underline;
-}
 
-/* Optional Embedded Slides Frame */
+/* Presentation link pill */
+.project-links {
+  margin-top: 0.9rem;
+}
+.slide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--heading);
+  border-radius: 999px;
+  background: var(--heading-tint);
+  color: var(--heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.slide-link:hover {
+  background: var(--heading);
+  color: #fff;
+}
+.slide-link svg { width: 0.85em; height: 0.85em; flex: none; }
+
+/* Embedded slides frame */
 .embed-container {
-  margin-top: 0.75rem;
-  border-radius: 6px;
+  margin-top: 1rem;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--rule);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.embed-container iframe {
+  display: block;
+  width: 100%;
+  height: 320px;
+  border: 0;
 }
 </style>
 </head>
@@ -168,18 +187,21 @@ footer {
   </div>
 </header>
 
-<section>
+<main>
+  <section>
     <h2>Research</h2>
     <div class="body">
       <div class="item">
-        <h3>Predicting adverse drug reactions from chemical and drug-induced human-cell line Data</h3>
+        <h3>Predicting Adverse Drug Reactions from Chemical and Drug-Induced Human-Cell Line Data</h3>
         <p class="meta">Ma'ayan Lab</p>
-        <p> Over the summer, I built a multimodal deep learning pipeline that predicts adverse drug reactions from the FDA Adverse Event Reporting System. It joins chemical fingerprints for about 14.8 million reports with drug-induced gene expression signatures from LINCS L1000, then fuses the two into a shared representation that predicts clinical outcomes.</p>
+        <p>Over the summer, I built a multimodal deep learning pipeline that predicts adverse drug reactions from the FDA Adverse Event Reporting System. It joins chemical fingerprints for about 14.8 million reports with drug-induced gene expression signatures from LINCS L1000, then fuses the two into a shared representation that predicts clinical outcomes.</p>
         <p>Most of the work is in the details: sparse matrices too large for memory, extreme class imbalance, and debugging models that quietly stop learning.</p>
-        
-        <!-- PLACEHOLDER 1: Research Slide Deck -->
+
         <p class="project-links">
-          <a href="https://docs.google.com/presentation/d/1oYKX062zfk4bf4J5vZlAs86LZ9OOs8j1VN1WUgi5guM/edit?slide=id.g3f3cff1a1c0_1_0#slide=id.g3f3cff1a1c0_1_0" target="_blank" rel="noopener">View Presentation Slides ↗</a>
+          <a class="slide-link" href="https://docs.google.com/presentation/d/1oYKX062zfk4bf4J5vZlAs86LZ9OOs8j1VN1WUgi5guM/edit?slide=id.g3f3cff1a1c0_1_0#slide=id.g3f3cff1a1c0_1_0" target="_blank" rel="noopener">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="15" height="10" rx="1.4"/><path d="M7 17.5h6M10 14.5v3"/></svg>
+            View slides
+          </a>
         </p>
       </div>
     </div>
@@ -189,17 +211,19 @@ footer {
     <h2>Sports Analytics</h2>
     <div class="body">
       <div class="item">
-        <h3>NFL field-goal prediction model</h3>
+        <h3>NFL Field-Goal Prediction Model</h3>
         <p class="meta">Cornell Sports Analytics Club</p>
         <p>Built a model that predicts whether a field goal will be made, and presented it to about 30 club members and leaders.</p>
-        
+
         <p class="project-links">
-          <a href="https://docs.google.com/presentation/d/1ESqe-pZ85svYFLnz3bMmqy5K6ZHAvKq6eI_KrgZL6XM/edit?slide=id.h26eb3bb4159f171a_0_0#slide=id.h26eb3bb4159f171a_0_0" target="_blank" rel="noopener">View Presentation Slides ↗</a>
+          <a class="slide-link" href="https://docs.google.com/presentation/d/1ESqe-pZ85svYFLnz3bMmqy5K6ZHAvKq6eI_KrgZL6XM/edit?slide=id.h26eb3bb4159f171a_0_0#slide=id.h26eb3bb4159f171a_0_0" target="_blank" rel="noopener">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="15" height="10" rx="1.4"/><path d="M7 17.5h6M10 14.5v3"/></svg>
+            View slides
+          </a>
         </p>
 
-
         <div class="embed-container">
-          <iframe src="https://docs.google.com/presentation/d/1ESqe-pZ85svYFLnz3bMmqy5K6ZHAvKq6eI_KrgZL6XM/edit?slide=id.h26eb3bb4159f171a_0_0#slide=id.h26eb3bb4159f171a_0_0" frameborder="0" width="100%" height="320" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          <iframe src="https://docs.google.com/presentation/d/1ESqe-pZ85svYFLnz3bMmqy5K6ZHAvKq6eI_KrgZL6XM/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
         </div>
       </div>
 
@@ -207,37 +231,26 @@ footer {
         <h3>Markov Rankings in Sports Leagues</h3>
         <p class="meta">Linear Algebra Final Project</p>
         <p>Applied random walks and transition matrices to construct ranking systems for sports teams based on match outcomes.</p>
-        
+
         <p class="project-links">
-          <a href="https://docs.google.com/presentation/d/1xS5J4FljKSowM-ZWn6VPKKIubfDZ0-ukQ-6KfULsKQM/edit?slide=id.g4dfce81f19_0_45#slide=id.g4dfce81f19_0_45" target="_blank" rel="noopener">View Presentation Slides ↗</a>
+          <a class="slide-link" href="https://docs.google.com/presentation/d/1xS5J4FljKSowM-ZWn6VPKKIubfDZ0-ukQ-6KfULsKQM/edit?slide=id.g4dfce81f19_0_45#slide=id.g4dfce81f19_0_45" target="_blank" rel="noopener">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="15" height="10" rx="1.4"/><path d="M7 17.5h6M10 14.5v3"/></svg>
+            View slides
+          </a>
         </p>
       </div>
 
       <div class="item">
         <h3>Analyzing the Impact of Workload on Injury Risk in Football</h3>
-        <p class="meta">STSCI 4981 - Sports Analytics in Practice — Final Project</p>
+        <p class="meta">STSCI 4981 — Sports Analytics in Practice, Final Project</p>
         <p>Predicting the impact of workload on injury risk in football skill positions.</p>
-        
+
         <p class="project-links">
-          <a href="https://docs.google.com/presentation/d/1CqiY3KrdHgf3yhpIhPVSXIQcR764iP10L0N5rTcYiRs/edit" target="_blank" rel="noopener">View Presentation Slides ↗</a>
+          <a class="slide-link" href="https://docs.google.com/presentation/d/1CqiY3KrdHgf3yhpIhPVSXIQcR764iP10L0N5rTcYiRs/edit" target="_blank" rel="noopener">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="4.5" width="15" height="10" rx="1.4"/><path d="M7 17.5h6M10 14.5v3"/></svg>
+            View slides
+          </a>
         </p>
-      </div>
-    </div>
-  </section>
-
-
-  <section>
-    <h2>Community</h2>
-    <div class="body">
-      <div class="item">
-        <h3>AIM Project</h3>
-        <p class="meta">President, 2022 to 2025</p>
-        <p>Led 20 tutors and 6 directors in free tutoring for underrepresented students across more than 20 NYC middle schools. Over 30 of our students earned admission to specialized high schools.</p>
-      </div>
-      <div class="item">
-        <h3>NYC Teens for 9 Million Reasons</h3>
-        <p class="meta">Co-president, 2022 to 2025</p>
-        <p>Co-founded a citywide group of 40+ teens that distributed food and clothes every week at the largest food pantry in New York City.</p>
       </div>
     </div>
   </section>
@@ -245,7 +258,7 @@ footer {
   <section>
     <h2>Right now</h2>
     <div class="body">
-      <p>Learning OCaml, and thinking about mahjong discards in terms of probability.</p>
+      <p>Learning OCaml and thinking about how to turn my personal passions into machine learning projects.</p>
     </div>
   </section>
 </main>
